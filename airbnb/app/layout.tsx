@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import Modal from "./components/modals/Modal";
+import ToasterProvider from "./providers/ToasterProvider";
+import RegisterModal from "./components/modals/RegisterModal";
 
 export const metadata = {
   title: "Aribnb",
@@ -22,6 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider />
+          <RegisterModal />
           <Modal isOpen />
           <Navbar />
         </ClientOnly>
